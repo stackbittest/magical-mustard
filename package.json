@@ -1,0 +1,20 @@
+{
+  "name": "web-site-11ty-07-movable-git",
+  "author": "Katie Kodes",
+  "version": "1.0.0",
+  "description": "",
+  "main": ".eleventy.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "cross-env NODE_ENV=production npx eleventy",
+    "dev": "cross-env NODE_ENV=development npx eleventy --watch --serve",
+    "develop": "cross-env NODE_ENV=development npx eleventy --watch --serve",
+    "now-build": "cross-env NODE_ENV=production npm run build",
+    "debug": "DEBUG=* npx eleventy"
+  },
+  "dependencies": {
+    "@11ty/eleventy": "latest",
+    "cross-env": "latest",
+    "dotenv": "latest"
+  }
+}

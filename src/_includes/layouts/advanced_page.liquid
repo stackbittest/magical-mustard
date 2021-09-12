@@ -1,0 +1,12 @@
+---
+layout: layouts/standard_header_footer.liquid
+---
+<div class="xyzzy">
+  {% for section in sections %}
+    {% assign sectionType = section.type %}
+    {% if section and sectionType %}
+      {% capture sectionTemplateFile %}components/{{ sectionType }}.liquid{% endcapture %}
+      {% include {{ sectionTemplateFile }}, section:section %}
+    {% endif %}
+  {% endfor %}
+</div>

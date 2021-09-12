@@ -1,0 +1,17 @@
+{% comment %}Short-circuit if data passed to this partial as "task" isn't actually task-like{% endcomment %}
+{% if taskDetail and taskDetail.task %}
+  {% unless taskDetail.done == blank %}
+    {% if taskDetail.done %}
+      {% assign checkboxSymbol = '✓' %}
+    {% else %}
+      {% assign checkboxSymbol = 'X' %}
+    {% endif %}
+    {% capture classes %}task {{ alternatingClassName }}{% endcapture %}
+    <div class="{{ classes }}">
+      <b>{{ checkboxSymbol}}</b> <b>{{ taskDetail.task }}</b>
+      {% unless taskDetail.how == blank %}
+        <i> {{ taskDetail.how }}</i>
+      {% endunless %}
+    </div>
+  {% endunless %}
+{% endif %}
