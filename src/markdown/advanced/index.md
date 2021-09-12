@@ -9,7 +9,7 @@ sections:
         how: well
       - task: sleep
         done: false
-        how: soundly
+        how: soundly like a baby
       - task: jump
         done: true
         how: high
